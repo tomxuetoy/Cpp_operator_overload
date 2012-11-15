@@ -77,13 +77,17 @@ public:
     
    /*以下重载 输入>> 输出<< */
      /*友元函数，输出对象*/
+     // Check this link to see more details:
+     // http://stackoverflow.com/questions/13394703/why-the-ostream-os-must-be-there-for-c-operator-overload#13394760, 
+     // about friend, ostream & os...
+     // http://zhidao.baidu.com/question/18166433.html, about &
      friend inline ostream & operator << (ostream & os, test &t1){
-         cout << "class t(" << t1.v << ")" << endl;
+         os << "class t(" << t1.v << ")" << endl;
          return os;
      }
      /*友元函数，输入对象*/
      friend inline istream & operator >> (istream & is, test &t1){
-         cin >> t1.v;
+         is >> t1.v;
          return is;
      }
 };
