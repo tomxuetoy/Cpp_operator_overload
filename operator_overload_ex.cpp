@@ -34,7 +34,7 @@ public:
          return *this;
      }
      //int赋值给对象
-     test & operator=(const int &t1){
+     test & operator=(const int &t1){   // &x means that return value should be x type: *this
          v = t1;
          return *this;
      }
@@ -89,7 +89,7 @@ public:
 };
 
 int main(){
-     test t0, t1(3);
+     test t0, t1(3);  // t0 has no initial value, so use default value 0
      test t2(t1);
      cout << t0 << t1 << t2;
      cin >> t1;
