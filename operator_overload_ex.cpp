@@ -81,6 +81,7 @@ public:
      // http://stackoverflow.com/questions/13394703/why-the-ostream-os-must-be-there-for-c-operator-overload#13394760, 
      // about friend, ostream & os...
      // http://zhidao.baidu.com/question/18166433.html, about &
+     /*友元函数：因为左操作数不是类的对象，而是ostream&类型，所以无法以成员函数的身份设定，只能是友元函数*/
      friend inline ostream & operator << (ostream & os, test &t1){
          os << "class t(" << t1.v << ")" << endl;
          return os;
